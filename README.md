@@ -1,2 +1,2 @@
 # uz0.dev
-Cfqn cjj,otcndf uz0
+Сайт сообщества uz0
