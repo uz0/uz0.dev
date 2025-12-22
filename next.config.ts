@@ -11,11 +11,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Set asset prefix for GitHub Pages deployment
-  assetPrefix: '/uz0.dev/',
-
-  // Enable basePath for GitHub Pages
-  basePath: '/uz0.dev',
+  // No basePath or assetPrefix needed for custom domain
+  // GitHub Pages will serve from the root domain directly
 };
 
 export default nextConfig;
