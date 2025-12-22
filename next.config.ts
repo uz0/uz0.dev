@@ -1,7 +1,18 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Configure output for GitHub Pages
+  output: 'export',
+  trailingSlash: true,
+  distDir: 'docs',
+
+  // Disable image optimization since GitHub Pages doesn't support it
+  images: {
+    unoptimized: true,
+  },
+
+  // Ensure proper asset handling
+  assetPrefix: '',
 };
 
 export default nextConfig;

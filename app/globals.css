@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.hover-link {
+  opacity: 0.3;
+  transition: all 1s ease;
+}
+
+.hover-link:hover {
+  opacity: 0.5;
+  transform: translateZ(20px) scale(1.1);
+  transition: all 0.5s ease;
+}
