@@ -11,8 +11,11 @@ const nextConfig: NextConfig = {
     unoptimized: true,
   },
 
-  // Ensure proper asset handling
-  assetPrefix: '',
+  // Set asset prefix for GitHub Pages deployment
+  assetPrefix: '/uz0.dev/',
+
+  // Enable basePath for GitHub Pages
+  basePath: '/uz0.dev',
 };
 
 export default nextConfig;
