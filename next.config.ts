@@ -4,7 +4,7 @@ const nextConfig: NextConfig = {
   // Configure output for GitHub Pages
   output: 'export',
   trailingSlash: true,
-  distDir: 'docs',
+  distDir: 'out', // Use standard 'out' directory
 
   // Disable image optimization since GitHub Pages doesn't support it
   images: {
