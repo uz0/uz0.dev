@@ -42,3 +42,4 @@ next-env.d.ts
 
 # development artifacts
 docs/dev/
+.vscode

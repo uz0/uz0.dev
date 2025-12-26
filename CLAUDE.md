@@ -1,0 +1,42 @@
+## Project Overview
+
+This is a application built with:
+
+- Nextjs (AppRouter), RSA,
+- Typescript,
+- Tailwind
+- Drizzle ORM
+- local development
+- Postgres in Docker
+- without an ORM container inside Next (Next runs on the host)
+
+## Development Rules
+
+- Always use TypeScript strict mode
+- Run tests before committing
+- Follow ESLint configuration
+- Use conventional commit messages
+- Write tests for new features
+
+## Architecture Patterns
+
+- Service layer for business logic
+- Controller layer for API endpoints
+- Middleware for cross-cutting concerns
+- Types folder for TypeScript interfaces
+
+## Common Commands
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run test` - Run tests
+- `npm run lint` - Run linter
+
+## Working with Specs/
+
+When implementing features:
+
+1. Read the specification in specs/[feature-name].md
+2. Follow the implementation prompts exactly
+3. Update the spec with any changes made
+4. Mark completed items with [x]

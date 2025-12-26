@@ -1,0 +1,12 @@
+.next
+node_modules
+dist
+build
+coverage
+
+# Next
+.next
+out
+
+# Env
+.env*
