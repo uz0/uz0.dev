@@ -75,19 +75,13 @@ export async function ingestYouTubeData(options: IngestOptions = {}) {
 /**
  * Upsert channel - returns 'created' or 'updated'
  */
-async function upsertChannel(
-  youtubeId: string,
-  title: string
-): Promise<'created' | 'updated'> {
+async function upsertChannel(youtubeId: string, title: string): Promise<'created' | 'updated'> {
   const existing = await db.query.channels.findFirst({
     where: eq(channels.youtubeId, youtubeId),
   });
 
   if (existing) {
-    await db
-      .update(channels)
-      .set({ title })
-      .where(eq(channels.id, existing.id));
+    await db.update(channels).set({ title }).where(eq(channels.id, existing.id));
     return 'updated';
   } else {
     await db.insert(channels).values({
@@ -120,10 +114,7 @@ async function upsertVideo(
   };
 
   if (existing) {
-    await db
-      .update(videos)
-      .set(videoData)
-      .where(eq(videos.id, existing.id));
+    await db.update(videos).set(videoData).where(eq(videos.id, existing.id));
     return 'updated';
   } else {
     await db.insert(videos).values(videoData);
