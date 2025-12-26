@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     });
 
     // Invalidate cache for videos
-    revalidateTag('videos');
+    revalidateTag('videos', 'force-no-cache');
 
     return NextResponse.json({
       success: true,
