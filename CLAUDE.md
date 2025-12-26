@@ -2,7 +2,7 @@
 
 This is a application built with:
 
-- Nextjs (AppRouter), RSA,
+- Nextjs (AppRouter) with RSC,
 - Typescript,
 - Tailwind
 - Drizzle ORM
@@ -31,6 +31,8 @@ This is a application built with:
 - `npm run build` - Build for production
 - `npm run test` - Run tests
 - `npm run lint` - Run linter
+- `npm run format` - Run prettier with write
+- `npm run format:check` - Run prettier with check
 
 ## Working with Specs/
 
