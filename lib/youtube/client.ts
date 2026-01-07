@@ -65,9 +65,7 @@ export class YouTubeClient {
       searchParams.set('q', params.query);
     }
 
-    const response = await fetch(
-      `${YOUTUBE_API_BASE_URL}/search?${searchParams.toString()}`
-    );
+    const response = await fetch(`${YOUTUBE_API_BASE_URL}/search?${searchParams.toString()}`);
 
     if (!response.ok) {
       throw new Error(`YouTube API error: ${response.statusText}`);
@@ -87,9 +85,7 @@ export class YouTubeClient {
       id: channelId,
     });
 
-    const response = await fetch(
-      `${YOUTUBE_API_BASE_URL}/channels?${searchParams.toString()}`
-    );
+    const response = await fetch(`${YOUTUBE_API_BASE_URL}/channels?${searchParams.toString()}`);
 
     if (!response.ok) {
       throw new Error(`YouTube API error: ${response.statusText}`);

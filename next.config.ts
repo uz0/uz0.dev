@@ -1,4 +1,4 @@
-import type { NextConfig } from 'next'
+import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   // Configure output for GitHub Pages
@@ -12,6 +12,6 @@ const nextConfig: NextConfig = {
   },
 
   // No assetPrefix - we'll handle this in the build script
-}
+};
 
-export default nextConfig
+export default nextConfig;

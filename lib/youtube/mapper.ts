@@ -1,7 +1,4 @@
-import type {
-  YouTubeVideoResponse,
-  YouTubeChannelResponse,
-} from './client';
+import type { YouTubeVideoResponse, YouTubeChannelResponse } from './client';
 
 export interface Channel {
   youtubeId: string;

@@ -35,17 +35,15 @@ export default async function DashboardPage() {
 
   return (
     <div className="min-h-screen p-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="mx-auto max-w-7xl">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold mb-2">YouTube Dashboard</h1>
-          <p className="text-gray-600">
-            {videos.length} videos in database
-          </p>
+          <h1 className="mb-2 text-3xl font-bold">YouTube Dashboard</h1>
+          <p className="text-gray-600">{videos.length} videos in database</p>
         </div>
 
         {videos.length === 0 ? (
-          <div className="text-center py-12 bg-gray-50 rounded-lg">
-            <p className="text-gray-500 mb-4">No videos found in database</p>
+          <div className="rounded-lg bg-gray-50 py-12 text-center">
+            <p className="mb-4 text-gray-500">No videos found in database</p>
             <p className="text-sm text-gray-400">
               Use the API to ingest YouTube data: POST /api/ingest/youtube
             </p>
@@ -55,21 +53,17 @@ export default async function DashboardPage() {
             {videos.map((video) => (
               <div
                 key={video.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+                className="overflow-hidden rounded-lg bg-white shadow-md transition-shadow hover:shadow-lg"
               >
-                <a
-                  href={video.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href={video.link} target="_blank" rel="noopener noreferrer">
                   <img
                     src={video.imageUrl}
                     alt={video.title}
-                    className="w-full h-48 object-cover"
+                    className="h-48 w-full object-cover"
                   />
                 </a>
                 <div className="p-4">
-                  <h3 className="font-semibold text-lg mb-2 line-clamp-2">
+                  <h3 className="mb-2 line-clamp-2 text-lg font-semibold">
                     <a
                       href={video.link}
                       target="_blank"
@@ -80,17 +74,13 @@ export default async function DashboardPage() {
                     </a>
                   </h3>
                   {video.channel && (
-                    <p className="text-sm text-gray-600 mb-2">
-                      {video.channel.title}
-                    </p>
+                    <p className="mb-2 text-sm text-gray-600">{video.channel.title}</p>
                   )}
                   {video.description && (
-                    <p className="text-sm text-gray-500 line-clamp-3">
-                      {video.description}
-                    </p>
+                    <p className="line-clamp-3 text-sm text-gray-500">{video.description}</p>
                   )}
                   {video.publishedAt && (
-                    <p className="text-xs text-gray-400 mt-3">
+                    <p className="mt-3 text-xs text-gray-400">
                       {new Date(video.publishedAt).toLocaleDateString()}
                     </p>
                   )}

@@ -1,9 +1,4 @@
-import {
-  pgTable,
-  uuid,
-  text,
-  timestamp,
-} from 'drizzle-orm/pg-core';
+import { pgTable, uuid, text, timestamp } from 'drizzle-orm/pg-core';
 import { channels } from './channels';
 
 export const videos = pgTable('videos', {
@@ -17,7 +12,5 @@ export const videos = pgTable('videos', {
   publishedAt: timestamp('published_at', {
     withTimezone: true,
   }),
-  createdAt: timestamp('created_at', { withTimezone: true })
-    .defaultNow()
-    .notNull(),
+  createdAt: timestamp('created_at', { withTimezone: true }).defaultNow().notNull(),
 });
