@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { ingestYouTubeData } from '@/lib/jobs/youtube';
 import { revalidateTag } from 'next/cache';
 
-const INGEST_SECRET = process.env.INGEST_SECRET || 'change-me-in-production';
+const INGEST_SECRET = process.env.INGEST_SECRET;
 
 /**
  * POST /api/ingest/youtube

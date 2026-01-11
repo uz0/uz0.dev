@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 
+const INGEST_SECRET = process.env.INGEST_SECRET;
+
 interface IngestResult {
   success?: boolean;
   results?: {
@@ -29,7 +31,7 @@ export default function YoutubeUpdatePage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer dev-secret-change-in-production',
+          Authorization: `Bearer ${INGEST_SECRET}`,
         },
         body: JSON.stringify({
           part: 'snippet',
