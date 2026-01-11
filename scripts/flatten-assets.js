@@ -60,7 +60,7 @@ function findHtmlFiles(dir) {
 findHtmlFiles(targetDir);
 
 // Update asset paths in all HTML files
-htmlFiles.forEach(file => {
+htmlFiles.forEach((file) => {
   updateAssetPaths(file);
 });
 
