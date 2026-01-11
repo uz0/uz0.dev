@@ -17,6 +17,9 @@ This is a application built with:
 - Follow ESLint configuration
 - Use conventional commit messages
 - Write tests for new features
+- Always use context7 MCP
+- All components are located in the folder `/components`.
+- Each component is located in a separate folder named after the component. Inside this folder is a component file with the same name and `index.tsx` with the export of this component.
 
 ## Architecture Patterns
 

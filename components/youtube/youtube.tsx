@@ -30,7 +30,7 @@ async function getVideos() {
   return result;
 }
 
-export default async function DashboardPage() {
+export default async function Youtube() {
   const videos = await getVideos();
 
   return (

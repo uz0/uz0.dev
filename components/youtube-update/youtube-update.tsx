@@ -1,8 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-
-const INGEST_SECRET = process.env.INGEST_SECRET;
+import { ingestAction } from './actions';
 
 interface IngestResult {
   success?: boolean;
@@ -16,7 +15,7 @@ interface IngestResult {
   message?: string;
 }
 
-export default function YoutubeUpdatePage() {
+export default function YoutubeUpdate() {
   const [result, setResult] = useState<IngestResult | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -27,24 +26,12 @@ export default function YoutubeUpdatePage() {
     setResult(null);
 
     try {
-      const response = await fetch('/api/ingest/youtube', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${INGEST_SECRET}`,
-        },
-        body: JSON.stringify({
-          part: 'snippet',
-          channelId: 'UCJNuWmihoVgEnqOiBwYUtgg',
-          maxResults: 5,
-          order: 'date',
-          type: 'video',
-        }),
+      const data = await ingestAction({
+        channelId: 'UCJNuWmihoVgEnqOiBwYUtgg',
+        maxResults: 5,
       });
 
-      const data = await response.json();
-
-      if (!response.ok) {
+      if (data.error) {
         setError(data.error || data.message || 'Unknown error');
       } else {
         setResult(data);
@@ -101,26 +88,14 @@ export default function YoutubeUpdatePage() {
       <div style={{ marginTop: '40px', padding: '15px', backgroundColor: '#f5f5f5' }}>
         <h2>Request Details:</h2>
         <p>
-          <strong>URL:</strong> /api/ingest/youtube
+          <strong>Channel ID:</strong> UCJNuWmihoVgEnqOiBwYUtgg
         </p>
         <p>
-          <strong>Method:</strong> POST
+          <strong>Max Results:</strong> 5
         </p>
         <p>
-          <strong>Headers:</strong>
+          <strong>Method:</strong> Server Action
         </p>
-        <pre>{`Content-Type: application/json
-Authorization: Bearer dev-secret-change-in-production`}</pre>
-        <p>
-          <strong>Body:</strong>
-        </p>
-        <pre>{`{
-  "part": "snippet",
-  "channelId": "UCJNuWmihoVgEnqOiBwYUtgg",
-  "maxResults": 5,
-  "order": "date",
-  "type": "video"
-}`}</pre>
       </div>
     </div>
   );
