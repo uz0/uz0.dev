@@ -29,7 +29,7 @@ export default function YoutubeUpdatePage() {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: 'Bearer change-me-in-production',
+          Authorization: 'Bearer dev-secret-change-in-production',
         },
         body: JSON.stringify({
           part: 'snippet',
@@ -108,7 +108,7 @@ export default function YoutubeUpdatePage() {
           <strong>Headers:</strong>
         </p>
         <pre>{`Content-Type: application/json
-Authorization: Bearer change-me-in-production`}</pre>
+Authorization: Bearer dev-secret-change-in-production`}</pre>
         <p>
           <strong>Body:</strong>
         </p>
